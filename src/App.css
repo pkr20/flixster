@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10%;
 }
 
 .App-header {
@@ -10,6 +13,11 @@
   justify-content: space-evenly;
   color: white;
   padding: 20px;
+
+}
+
+.movie {
+  border: black 1px solid;
 }
 
 @media (max-width: 600px) {

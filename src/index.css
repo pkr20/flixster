@@ -13,6 +13,10 @@ button {
   transition: background-color 0.3s ease;
 }
 
+.movie {
+  border: black 1px solid;
+}
+
 button:hover {
   background-color: #777;
   color: white;
