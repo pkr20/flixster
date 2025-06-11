@@ -17,7 +17,7 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [X] Title
     - [X] Poster image
     - [X] Vote average
-  - [] Users can load more current movies by clicking a button which adds more movies to the grid without reloading the entire page.
+  - [X] Users can load more current movies by clicking a button which adds more movies to the grid without reloading the entire page.
 - [ ] **Search Functionality**
   - [ ] Users can use a search bar to search for movies by title.
   - [ ] The search bar should include:
