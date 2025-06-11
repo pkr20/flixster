@@ -21,8 +21,10 @@
 
 }
 
-.movie-list{
+.movie-list ul {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 600px) {

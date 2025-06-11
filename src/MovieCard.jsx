@@ -6,6 +6,5 @@ const MovieCard = ({movie}) => {
             <h3>{movie.vote_average}</h3>
         </div>
     )
-
 }
 export default MovieCard
