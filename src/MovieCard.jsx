@@ -1,10 +1,9 @@
-const MovieCard = () => {
+const MovieCard = ({movie}) => {
     return(
-        <div className="movie">
-            <img src="https://picsum.photos/200/300" alt='Picsum'></img>
-            <h2>Movie Title</h2>
-            <h3>Movie Rating</h3>
-            <h3>Vote</h3>
+        <div className="movie-card">
+            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title}></img>
+            <h2>{movie.title}</h2>
+            <h3>{movie.vote_average}</h3>
         </div>
     )
 

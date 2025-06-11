@@ -16,8 +16,13 @@
 
 }
 
-.movie {
+.movie-card {
   border: black 1px solid;
+
+}
+
+.movie-list{
+  display: flex;
 }
 
 @media (max-width: 600px) {
