@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
 
 export default function MoviePage({movie}) {
-    const [searchText, setSearchText] = useState("");
+    //const [searchText, setSearchText] = useState("");
     return(
         <div>
             <SearchBar setResults={setSearchResults} />
