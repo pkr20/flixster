@@ -19,14 +19,14 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [X] Vote average
   - [X] Users can load more current movies by clicking a button which adds more movies to the grid without reloading the entire page.
 - [ ] **Search Functionality**
-  - [ ] Users can use a search bar to search for movies by title.
-  - [ ] The search bar should include:
-    - [ ] Text input field
-    - [ ] Submit/Search button
+  - [X] Users can use a search bar to search for movies by title.
+  - [X] The search bar should include:
+    - [X] Text input field
+    - [X] Submit/Search button
     - [ ] Clear button
   - [ ] Movies with a title containing the search query in the text input field are displayed in a grid view when the user either:
-    - [ ] Presses the Enter key
-    - [ ] Clicks the Submit/Search button
+    - [X] Presses the Enter key
+    - [X] Clicks the Submit/Search button
   - [ ] Users can click the Clear button. When clicked:
     - [ ] Most recent search results are cleared from the text input field and the grid view and all current movies are displayed in a grid view
 - [ ] **Design Features**
