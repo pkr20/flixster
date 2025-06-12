@@ -10,7 +10,7 @@ const App = () => {
   const [view, setView] = useState('nowPlaying')
   const handleViewChange = (viewType) => {
     setView(viewType);
-    //clears search results when now playing
+2    //clears search results when now playing
     if (viewType === 'nowPlaying') {
       setSearchResults(null);
     }

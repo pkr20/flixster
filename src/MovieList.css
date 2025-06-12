@@ -1,0 +1,45 @@
+.movie-list-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.movie-item {
+    flex: 300px;
+    max-width: 300px;
+    min-width: 250px;
+}
+
+/*tablets or smaller*/
+@media screen and (max-width: 768px) {
+    .movie-grid {
+        gap: 15px;
+    }
+    .movie-item {
+        flex: 250px;
+        max-width: 250px;
+    }
+}
+/*phones or smaller, reduce padding and gap*/
+@media screen and (max-width: 480px) {
+    .movie-list-container {
+        padding: 10px;
+    }
+    .movie-grid {
+        gap: 10px;
+    }
+    .movie-item {
+        flex: 100%;
+        max-width: 100%;
+    }
+} 

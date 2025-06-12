@@ -1,11 +1,22 @@
 import { useState, useEffect } from 'react';
 import MovieCard from './MovieCard.jsx';
+import './MovieList.css';
+import Modal from './Modal.jsx';
 
 const MovieList = ({ movies: propMovies }) => {
     const [movies, setMovies] = useState([]);
     const [visiblePages, setVisiblePages] = useState(9); // start with 6 visible pages
-    const [hasMorePages, setHasMorePages] = useState(true);
+    const [hasMorePages, setHasMorePages] = useState(true); //for loading more movies
+    const [currMovie, setCurrMovie] = useState(null); //for current movie modal
     const apiKey = import.meta.env.VITE_API_KEY
+
+    //for movies modal functionality
+    const handleMovieClick = (movie) => {
+        setCurrMovie(movie);
+    }
+    const handleCloseModal = () => {
+        setCurrMovie(null);
+    }
 
     const fetchMovies = async () => {
         try {
@@ -47,19 +58,19 @@ const MovieList = ({ movies: propMovies }) => {
     };
 
     return (
-        <div className='movie-list'>
+        <div className='movie-list-container'>
             <h2>Movies</h2>
-            <ul>
+            <ul className='movie-grid'>
                 {visibleMovies.map(movie => (
-                    <li key={movie.id}>
+                    <li key={movie.id} className='movie-item' onClick={() => handleMovieClick(movie)}>
                         <MovieCard movie={movie} />
                     </li>
                 ))}
             </ul>
             {hasMorePages ? (<button onClick={handleLoadMore}>Load More</button>) : (<p>No more movies to show</p>)}
+            {currMovie && <Modal movie={currMovie} onClose={handleCloseModal} />}
         </div>
     );
 };
-
 
 export default MovieList
