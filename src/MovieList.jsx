@@ -3,7 +3,7 @@ import MovieCard from './MovieCard.jsx';
 
 const MovieList = ({ movies: propMovies }) => {
     const [movies, setMovies] = useState([]);
-    const [visiblePages, setVisiblePages] = useState(6); // start with 6 visible pages
+    const [visiblePages, setVisiblePages] = useState(9); // start with 6 visible pages
     const [hasMorePages, setHasMorePages] = useState(true);
     const apiKey = import.meta.env.VITE_API_KEY
 
@@ -48,7 +48,7 @@ const MovieList = ({ movies: propMovies }) => {
 
     return (
         <div className='movie-list'>
-            <h2>Movie List</h2>
+            <h2>Movies</h2>
             <ul>
                 {visibleMovies.map(movie => (
                     <li key={movie.id}>
