@@ -3,7 +3,7 @@ import MovieCard from './MovieCard.jsx';
 import { use } from 'react';
 
 
-const MovieList = () => {
+const MovieList = ({ movies: propMovies }) => {
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(1); //page state variable
     const [visiblePages, setVisiblePages] = useState(6) // start with 6 visible pages
@@ -24,6 +24,16 @@ const MovieList = () => {
             console.error("Not fetching movies :(", error);
         }
     }
+
+    useEffect(() => {
+        if (!propMovies) {
+            fetchMovies();
+        }
+    }, [propMovies]);
+
+    const allMovies = propMovies || movies; //if propMovies is not null, use it, otherwise use movies state
+   
+
     useEffect(() => {
         //runs when compoenent is rendered
             fetchMovies();

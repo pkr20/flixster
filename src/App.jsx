@@ -9,6 +9,7 @@ const App = () => {
       <SearchBar/>
       <MovieList/>
 
+
     </div>
   )
 }
