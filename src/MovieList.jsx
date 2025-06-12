@@ -8,16 +8,50 @@ const MovieList = ({ movies: propMovies }) => {
     const [visiblePages, setVisiblePages] = useState(9); // start with 6 visible pages
     const [hasMorePages, setHasMorePages] = useState(true); //for loading more movies
     const [currMovie, setCurrMovie] = useState(null); //for current movie modal
+    const [genreMap, setGenreMap] = useState({});//for movie genres [
     const apiKey = import.meta.env.VITE_API_KEY
 
+    
+
     //for movies modal functionality
-    const handleMovieClick = (movie) => {
-        setCurrMovie(movie);
+    const handleMovieClick = async (movie) => {
+        try {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${apiKey}`);
+            if (!response.ok) { //error handling
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            const movieData = await response.json();
+                        setCurrMovie({...movie, ...movieData});
+        } catch (error) {
+            console.error("Not fetching movie :(", error);
+            // Fallback to basic movie data if there's an error
+            setCurrMovie(movie);
+        }
     }
     const handleCloseModal = () => {
         setCurrMovie(null);
     }
 
+    //fetching genres
+    const fetchGenres = async () => {
+        try {
+            const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${apiKey}`);
+            if (!response.ok) { //error handling
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            const data = await response.json();
+
+            //create a map of genre ids to names
+            const genres = {};
+            data.genres.forEach(genre => {
+                genres[genre.id] = genre.name;
+            });
+            setGenreMap(genres);
+        }  catch (error) {
+            console.error("Not fetching genres :(", error);
+
+        }
+    };
     const fetchMovies = async () => {
         try {
             const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${apiKey}`);
@@ -33,8 +67,9 @@ const MovieList = ({ movies: propMovies }) => {
         }
     }
 
-    //fetch movies if no search results are provided
+    //fetch movies and genres if no search results are provided
     useEffect(() => {
+        fetchGenres(); // Always fetch genres
         if (!propMovies) {
             fetchMovies();
         }
@@ -68,7 +103,7 @@ const MovieList = ({ movies: propMovies }) => {
                 ))}
             </ul>
             {hasMorePages ? (<button onClick={handleLoadMore}>Load More</button>) : (<p>No more movies to show</p>)}
-            {currMovie && <Modal movie={currMovie} onClose={handleCloseModal} />}
+            {currMovie && <Modal movie={currMovie} onClose={handleCloseModal} genreMap={genreMap}/>}
         </div>
     );
 };
