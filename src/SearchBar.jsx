@@ -33,10 +33,17 @@ export default function SearchBar({setResults}) {
   function inputChange(e) {
     setSearchInput(e.target.value);
   };
+
+  function handleClear() {
+    setSearchInput("");
+    setResults(null);
+  }
+
   return (
     <form onSubmit={handleSubmit} className='search-form'>
       <input type="text" value={searchInput} onChange={inputChange} placeholder="Search for Movies..."/>
       <button className='search-button' type='submit'>Search</button>
+      <button className='clear-button' type='button' onClick={handleClear}>Clear</button>
     </form>
   )
 }
