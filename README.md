@@ -2,7 +2,7 @@
 
 Submitted by: **Kayleen Ramirez**
 
-Estimated time spent: ** ** hours spent in total
+Estimated time spent: **18** hours spent in total
 
 Deployed Application (**required**): [Flixster Deployed Site](https://flixster-1.onrender.com/)
 
@@ -102,7 +102,6 @@ Deployed Application (**required**): [Flixster Deployed Site](https://flixster-1
 
 https://www.loom.com/share/c4cc10683d604de0b6dcad48206b62f5?sid=051185ca-9bb5-43ca-966d-f72b307231fd
 
-`ADD_EMBEDDED_CODE_HERE`
 
 ### Reflection
 

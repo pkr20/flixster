@@ -2,13 +2,15 @@ import { useState } from "react";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
-export default function SearchBar({setResults}) {
+export default function SearchBar({ setResults }) {
   const [searchInput, setSearchInput] = useState("");
 
   async function handleSearch(query) {
     try {
       const response = await fetch(
-        `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&api_key=${apiKey}&language=en-US`
+        `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+          query
+        )}&api_key=${apiKey}&language=en-US`
       );
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
@@ -23,16 +25,16 @@ export default function SearchBar({setResults}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("form submission")
+    console.log("form submission");
 
     if (searchInput.trim() !== "") {
-        handleSearch(searchInput);
+      handleSearch(searchInput);
     }
   }
 
   function inputChange(e) {
     setSearchInput(e.target.value);
-  };
+  }
 
   function handleClear() {
     setSearchInput("");
@@ -40,11 +42,20 @@ export default function SearchBar({setResults}) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='search-form'>
-      <input type="text" value={searchInput} onChange={inputChange} placeholder="Search for Movies..."/>
-      <button className='search-button' type='submit'>Search</button>
-      <button className='clear-button' type='button' onClick={handleClear}>Clear</button>
+    <form onSubmit={handleSubmit} className="search-form">
+      <input
+        type="text"
+        value={searchInput}
+        onChange={inputChange}
+        placeholder="Search for Movies..."
+      />
+      <button className="search-button" type="submit">
+        Search
+      </button>
+      <button className="clear-button" type="button" onClick={handleClear}>
+        Clear
+      </button>
     </form>
-  )
+  );
 }
 ///only search returns data to clear movie list

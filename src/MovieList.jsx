@@ -8,7 +8,7 @@ const MovieList = ({ movies: propMovies }) => {
     const [visiblePages, setVisiblePages] = useState(9); // start with 6 visible pages
     const [hasMorePages, setHasMorePages] = useState(true); //for loading more movies
     const [currMovie, setCurrMovie] = useState(null); //for current movie modal
-    const [genreMap, setGenreMap] = useState({});//for movie genres [
+    const [genreMap, setGenreMap] = useState({});//for movie genres 
     const [sort, setSort] = useState("main-page");
     const apiKey = import.meta.env.VITE_API_KEY
 
@@ -16,14 +16,14 @@ const MovieList = ({ movies: propMovies }) => {
     const handleSortChange =(e) => {
         setSort(e.target.value);
     };
-
+    //sorts the movies based on dropdown choice
     const sorter = (moviesToSort) => {
         if (!moviesToSort) {
             return [];
         }
         const sortedMovies = [...moviesToSort];
         if (sort === "title") {
-            return sortedMovies.sort((a, b) => a.title.localeCompare(b.title));
+            return sortedMovies.sort((a, b) => a.title.localeCompare(b.title));``
         }
         if (sort === "release-date") {
             return sortedMovies.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
@@ -78,6 +78,7 @@ const MovieList = ({ movies: propMovies }) => {
 
         }
     };
+    //fetching now playing movies
     const fetchMovies = async () => {
         try {
             const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${apiKey}`);
@@ -131,11 +132,6 @@ const MovieList = ({ movies: propMovies }) => {
                     <option value="title">Title</option>
                 </select>
             </div>
-
-
-
-
-
 
             <ul className='movie-grid'>
                 {visibleMovies.map(movie => (
