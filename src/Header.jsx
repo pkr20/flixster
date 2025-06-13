@@ -9,7 +9,7 @@ const Header = ({ view, onViewChange }) => {
         <header className="header">
             <div className="header-content">
                 <div>
-                    <img className="logo" src="flixster.png" alt="Flixster Logo" />
+                    <img className="logo" src="./assets/flixster.png" alt="Flixster Logo" />
                     <h1>Flixster</h1>
                 </div>
                 <nav className="header-nav">
