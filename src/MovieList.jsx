@@ -9,9 +9,36 @@ const MovieList = ({ movies: propMovies }) => {
     const [hasMorePages, setHasMorePages] = useState(true); //for loading more movies
     const [currMovie, setCurrMovie] = useState(null); //for current movie modal
     const [genreMap, setGenreMap] = useState({});//for movie genres [
+    const [sort, setSort] = useState("main-page");
     const apiKey = import.meta.env.VITE_API_KEY
 
-    
+
+    const handleSortChange =(e) => {
+        setSort(e.target.value);
+    };
+
+    const sorter = (moviesToSort) => {
+        if (!moviesToSort) {
+            return [];
+        }
+        const sortedMovies = [...moviesToSort];
+        if (sort === "title") {
+            return sortedMovies.sort((a, b) => a.title.localeCompare(b.title));
+        }
+        if (sort === "release-date") {
+            return sortedMovies.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
+        }
+        if (sort === "vote-rating") {
+            return sortedMovies.sort((a, b) => b.vote_average - a.vote_average);
+        }
+        else {
+            return sortedMovies
+        }
+    };
+
+    //use propMovies which are search results if available, otherwise use the fetched
+    const allMovies = sorter(propMovies ? propMovies : movies);
+
 
     //for movies modal functionality
     const handleMovieClick = async (movie) => {
@@ -24,7 +51,6 @@ const MovieList = ({ movies: propMovies }) => {
                         setCurrMovie({...movie, ...movieData});
         } catch (error) {
             console.error("Not fetching movie :(", error);
-            // Fallback to basic movie data if there's an error
             setCurrMovie(movie);
         }
     }
@@ -76,7 +102,7 @@ const MovieList = ({ movies: propMovies }) => {
     }, [propMovies]);
 
     //use propMovies which are search results if available, otherwise use the fetched movies
-    const allMovies = propMovies ? propMovies : movies;
+    //const allMovies = propMovies ? propMovies : movies;
 
     //get only the visible movies from either search results or fetched movies
     const visibleMovies = allMovies.slice(0, visiblePages);
@@ -95,6 +121,22 @@ const MovieList = ({ movies: propMovies }) => {
     return (
         <div className='movie-list-container'>
             <h2>Movies</h2>
+
+            <div className='sort-container'>
+                <label htmlFor="sort-select">Sort by?</label>
+                <select id="sort-select" value={sort} onChange={handleSortChange} className='sort-select'>
+                    <option value="main-page">Main</option>
+                    <option value="release-date">Release Date</option>
+                    <option value="vote-rating">Rating</option>
+                    <option value="title">Title</option>
+                </select>
+            </div>
+
+
+
+
+
+
             <ul className='movie-grid'>
                 {visibleMovies.map(movie => (
                     <li key={movie.id} className='movie-item' onClick={() => handleMovieClick(movie)}>
