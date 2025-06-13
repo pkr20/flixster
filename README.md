@@ -67,9 +67,9 @@ Deployed Application (**required**): [Flixster Deployed Site](https://flixster-1
 #### STRETCH FEATURES
 
 
-- [ ] **Embedded Movie Trailers**
-  - [ ] Within the pop-up modal displaying a movie's details, the movie trailer is viewable.
-    - [ ] When the trailer is clicked, users can play the movie trailer.
+- [X] **Embedded Movie Trailers**
+  - [X] Within the pop-up modal displaying a movie's details, the movie trailer is viewable.
+    - [X] When the trailer is clicked, users can play the movie trailer.
 - [X] **Favorite Button**
   - [X] For each movie displayed, users can favorite the movie.
   - [X] There should be visual element (such as a heart icon) on each movie's tile to show whether or not the movie has been favorited.
@@ -108,15 +108,15 @@ Deployed Application (**required**): [Flixster Deployed Site](https://flixster-1
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes, the React lab was very helpful in understanding and solidfying the basics of the framework. I felt unprepared rendering the video trailer API because I thought we were using YouTube embedded through Google Cloud, but then I realized TMDb's API includes the trailer. As for implementing it, it was similar to calling other variables like title or genre. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+If I had more time I would add TV shows as well organized by popular and top rated or title. I would also work more on the styling or coming up with a cooler color scheme for my project. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I demoed to a peer and they mentioned that I should try to work more on the CSS to make it more visually appealing. 
 
 ### Open-source libraries used
 
@@ -124,4 +124,4 @@ Add your response here
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+I am giving a shout out to Braden for helping me connect my SearchBar data to App and MovieCard.
