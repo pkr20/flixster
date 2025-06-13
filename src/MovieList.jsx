@@ -123,7 +123,7 @@ const MovieList = ({ movies: propMovies }) => {
             <h2>Movies</h2>
 
             <div className='sort-container'>
-                <label htmlFor="sort-select">Sort by?</label>
+                <label htmlFor="sort-select">Sort by:</label>
                 <select id="sort-select" value={sort} onChange={handleSortChange} className='sort-select'>
                     <option value="main-page">Main</option>
                     <option value="release-date">Release Date</option>
