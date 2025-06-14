@@ -59,10 +59,10 @@ Deployed Application (**required**): [Flixster Deployed Site](https://flixster-1
     - [X] Search bar
     - [X] Movie grid
     - [X] Footer section
-    - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it.
-  - [ ] **Deployment**
+    - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it.
+  - [X] **Deployment**
   - [X] Website is deployed via Render.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
+  - [X] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
 
 #### STRETCH FEATURES
 
@@ -111,7 +111,7 @@ Yes, the React lab was very helpful in understanding and solidfying the basics o
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-If I had more time I would add TV shows as well organized by popular and top rated or title. I would also work more on the styling or coming up with a cooler color scheme for my project. 
+If I had more time I would add TV shows as well organized by popular and top rated or title. I would implement this by using the same MovieCard, but TVCard component that can display other information like the amount of seasons a series has. I would also make the LoadPage feature have a front and back button and the amount of pages left displayed for a better user experience. I would also work more on the styling or coming up with a cooler color scheme for my project. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
