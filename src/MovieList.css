@@ -2,15 +2,18 @@
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .movie-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     list-style: none;
-    padding: 0;
+    padding: 20px;
     margin: 0;
 }
 
